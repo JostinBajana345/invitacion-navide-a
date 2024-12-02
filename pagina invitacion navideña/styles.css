@@ -1,0 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #c40025;
+    color: white;
+    padding: 20px;
+    border-bottom: 5px solid #a1001f;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas por defecto */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.member {
+    background-color: white;
+    border: 2px solid #c40025;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.member img {
+    width: 150px;
+    /* Imagen más grande */
+    height: 150px;
+    border-radius: 50%;
+    /* Imagen circular */
+    border: 3px solid #c40025;
+    object-fit: cover;
+    /* Ajustar la imagen al contenedor */
+    margin-bottom: 10px;
+}
+
+.member h3 {
+    margin-top: 10px;
+    color: #c40025;
+}
+
+/* Responsividad */
+
+/* Para pantallas medianas (tabletas y dispositivos entre 768px y 1024px) */
+@media (max-width: 1024px) {
+    .team {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columnas en lugar de 4 */
+    }
+
+    .member img {
+        width: 130px;
+        /* Tamaño ligeramente reducido */
+        height: 130px;
+    }
+}
+
+/* Para pantallas pequeñas (móviles entre 480px y 768px) */
+@media (max-width: 768px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas */
+    }
+
+    .member img {
+        width: 120px;
+        /* Más pequeño para móviles */
+        height: 120px;
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles menores de 480px) */
+@media (max-width: 480px) {
+    .team {
+        grid-template-columns: 1fr;
+        /* Una columna */
+    }
+
+    .member img {
+        width: 200px;
+        /* Más pequeño */
+        height: 200px;
+    }
+}
+
+footer {
+    background-color: #a1001f;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
