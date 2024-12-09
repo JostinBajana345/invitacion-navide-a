@@ -12,6 +12,13 @@
       <p>Talentos confirmados</p>
     </header>
     <main>
+      <div id="countdownModal" class="modal">
+        <div class="modal-content">
+          <h2>🎄 Cuenta regresiva para el 21 de diciembre 🎄</h2>
+          <p id="countdown"></p>
+          <button id="closeModal">Cerrar</button>
+        </div>
+      </div>
       <section class="team">
         <div class="member">
           <img src="tuarez.jpg" alt="Foto de Miembro 1" />
@@ -79,5 +86,61 @@
     <footer>
       <p>&copy; 2024 Equipo Navideño. Todos los derechos reservados.</p>
     </footer>
+    <script>
+      // Mostrar el modal al cargar la página
+      window.onload = function () {
+        const modal = document.getElementById("countdownModal");
+        modal.style.display = "flex";
+
+        // Calcular la cuenta regresiva
+        function updateCountdown() {
+          // Fecha y hora objetivo (21 del mes actual a las 6 PM)
+          const targetDate = new Date();
+          targetDate.setDate(21); // Día 21
+          targetDate.setHours(18, 0, 0, 0); // 6 PM (18:00:00)
+
+          // Fecha y hora actual
+          const now = new Date();
+
+          // Calcular la diferencia en milisegundos
+          const timeDifference = targetDate - now;
+
+          if (timeDifference <= 0) {
+            // Si el tiempo ha pasado, muestra un mensaje
+            document.getElementById("countdown").textContent =
+              "¡Es el día 21 a las 6 PM!";
+            clearInterval(timer); // Detén el temporizador
+            return;
+          }
+
+          // Convertir milisegundos a días, horas, minutos y segundos
+          const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+          // Mostrar el tiempo restante
+          document.getElementById(
+            "countdown"
+          ).textContent = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        }
+
+        // Actualizar el temporizador cada segundo
+        const timer = setInterval(updateCountdown, 1000);
+
+        // Actualizar el temporizador inmediatamente al cargar
+        updateCountdown();
+
+        // Cerrar el modal
+        const closeModal = document.getElementById("closeModal");
+        closeModal.onclick = function () {
+          modal.style.display = "none";
+        };
+      };
+    </script>
   </body>
 </html>

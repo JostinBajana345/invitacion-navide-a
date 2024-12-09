@@ -111,3 +111,60 @@ footer {
     margin-top: 20px;
     font-size: 0.9em;
 }
+/* Modal */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #c40025, #d44657);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.modal-content button {
+    background-color: white;
+    color: #c40025;
+    border: 2px solid #c40025;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #c40025;
+    color: white;
+    transition: 0.3s;
+}
+
+/* Fondo navideño */
+body {
+    background: url('https://images.unsplash.com/photo-1607867466458-91b679141a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') no-repeat center center fixed;
+    background-size: cover;
+}
