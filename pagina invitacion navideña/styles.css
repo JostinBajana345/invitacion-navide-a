@@ -43,6 +43,32 @@ header p {
     text-align: center;
 }
 
+.highlight {
+    /* background-color: #f5edad; */
+    /* Fondo blanco normal */
+    border: 2px solid #c40025;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    /* Necesario para que el aura se posicione correctamente */
+    animation: auraGlow 2s ease-in-out infinite alternate;
+    /* Animación para el aura */
+}
+
+/* Efecto de aura dorada */
+@keyframes auraGlow {
+    0% {
+        box-shadow: 0 0 10px 0 rgba(255, 215, 0, 0.5);
+        /* Aura suave */
+    }
+
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.8);
+        /* Aura más intensa */
+    }
+}
 .member img {
     width: 150px;
     /* Imagen más grande */
